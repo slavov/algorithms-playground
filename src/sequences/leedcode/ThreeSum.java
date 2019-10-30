@@ -1,4 +1,4 @@
-package leedcode.sequences;
+package sequences.leedcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package leedcode.sequences;
+package sequences.leedcode;
 
 /**
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
