@@ -1,8 +1,9 @@
-package sequences.dataStructure;
+package sequences.dataStructure.arrayList;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+@SuppressWarnings("unchecked")
 public class ArrayList<E> implements Iterable<E> {
     private static final int DEFAULT_CAPACITY = 10;
     private int size;

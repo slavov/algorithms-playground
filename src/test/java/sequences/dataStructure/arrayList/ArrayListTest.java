@@ -1,10 +1,11 @@
-package sequences.dataStructure;
+package sequences.dataStructure.arrayList;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import sequences.dataStructure.arrayList.ArrayList;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
