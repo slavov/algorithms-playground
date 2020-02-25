@@ -131,8 +131,8 @@ class DoublyLinkedListTest {
 
     @ParameterizedTest
     @MethodSource("listProvider")
-    void iterator(SinglyLinkedList<Integer> singlyLinkedList) {
-        Iterator<Integer> iterator = singlyLinkedList.iterator();
+    void iterator(DoublyLinkedList<Integer> doublyLinkedList) {
+        Iterator<Integer> iterator = doublyLinkedList.iterator();
         assertEquals(0, iterator.next());
         assertEquals(1, iterator.next());
         for (; iterator.hasNext(); ) {
@@ -142,7 +142,7 @@ class DoublyLinkedListTest {
     }
 
     static Stream<Arguments> listProvider() {
-        final SinglyLinkedList<Integer> instance = new SinglyLinkedList<>();
+        final DoublyLinkedList<Integer> instance = new DoublyLinkedList<>();
         for (int i = 0; i < 10; i++) {
             instance.addLast(i);
         }
