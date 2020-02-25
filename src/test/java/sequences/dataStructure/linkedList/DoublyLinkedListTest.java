@@ -10,31 +10,33 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class SinglyLinkedListTest {
+class DoublyLinkedListTest {
 
-    private SinglyLinkedList<Integer> list;
+    private DoublyLinkedList<Integer> list;
 
     @BeforeEach
-    void setUP() {
-        list = new SinglyLinkedList<>();
+    void setUp() {
+        list = new DoublyLinkedList<>();
     }
 
     @Test
-    void addFirstElementSuccess() {
-        list.addFirst(1);
-        assertEquals(1, list.getFirst());
-        assertEquals(1, list.get(0));
-        assertEquals(1, list.size());
+    void addFirstSuccess() {
+        list.addFirst(8);
+        list.addFirst(22);
 
-        list.addFirst(2);
-        assertEquals(2, list.getFirst());
-        assertEquals(1, list.get(1));
-        assertEquals(2, list.size());
+        assertEquals(22, list.getFirst());
+    }
+
+    @Test
+    void addLastSuccess() {
+        list.addLast(8);
+        list.addLast(22);
+        list.addLast(86);
+
+        assertEquals(86, list.getLast());
     }
 
     @Test
@@ -110,6 +112,20 @@ class SinglyLinkedListTest {
 
         //then
         assertEquals(22, list.get(0));
+        assertEquals(1, list.size());
+    }
+
+    @Test
+    void deleteFromTwoItemsSuccess() {
+        //given
+        list.addFirst(8);
+        list.addFirst(22);
+
+        //when
+        list.delete(22);
+
+        //then
+        assertEquals(8, list.get(0));
         assertEquals(1, list.size());
     }
 

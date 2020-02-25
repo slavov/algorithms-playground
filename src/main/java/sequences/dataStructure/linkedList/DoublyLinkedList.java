@@ -3,7 +3,7 @@ package sequences.dataStructure.linkedList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class SinglyLinkedList<E> implements Iterable<E> {
+public class DoublyLinkedList<E> implements Iterable<E> {
 
     private ListNode<E> head;
     private int size;
@@ -17,7 +17,13 @@ public class SinglyLinkedList<E> implements Iterable<E> {
     }
 
     public void addFirst(E item) {
-        head = new ListNode<>(item, head);
+        if (isEmpty()) {
+            head = new ListNode<>(null, item, null);
+        } else {
+            var curr = head;
+            head = new ListNode<>(null, item, curr);
+            curr.prev = head;
+        }
         size++;
     }
 
@@ -27,13 +33,14 @@ public class SinglyLinkedList<E> implements Iterable<E> {
     }
 
     public void addLast(E item) {
-        if (head == null) addFirst(item);
-        else {
+        if (isEmpty()) {
+            addFirst(item);
+        } else {
             var curr = head;
             while (curr.next != null) {
                 curr = curr.next;
             }
-            curr.next = new ListNode<>(item, null);
+            curr.next = new ListNode<>(curr, item, null);
             size++;
         }
     }
@@ -80,7 +87,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
             curr = curr.next;
         }
         if (curr != null) {
-            curr.next = new ListNode<>(newItem, curr.next);
+            curr.next = new ListNode<>(curr, newItem, curr.next);
             size++;
         }
     }
@@ -93,11 +100,12 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         ListNode<E> prev = null;
         var curr = head;
         while (curr != null && !item.equals(curr.item)) {
-            prev = curr;
             curr = curr.next;
         }
-        if (prev != null) {
-            prev.next = new ListNode<>(newItem, curr);
+        if (curr != null) {
+            var newNode = new ListNode<>(curr.prev, newItem, curr);
+            curr.prev.next = newNode;
+            curr.prev = newNode;
             size++;
         }
     }
@@ -108,19 +116,22 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         }
         if (item.equals(head.item)) {
             head = head.next;
+            head.prev = null;
             size--;
             return;
         }
-        ListNode<E> prev = null;
         var curr = head;
         while (curr != null && !item.equals(curr.item)) {
-            prev = curr;
             curr = curr.next;
         }
-        if (prev != null && curr != null) {
-            prev.next = curr.next;
-            size--;
+        if (curr == null) {
+            throw new NoSuchElementException("Element " + item.toString() + " not found");
         }
+        if (curr.next != null) {
+            curr.next.prev = curr.prev;
+        }
+        curr.prev.next = curr.next;
+        size--;
     }
 
     private ListNode<E> node(int index) {
@@ -132,12 +143,11 @@ public class SinglyLinkedList<E> implements Iterable<E> {
     }
 
     private void link(E item, ListNode<E> succ) {
-        var newNode = new ListNode<>(item, succ);
         var curr = head;
         while (curr.next != null && curr.next != succ) {
             curr = curr.next;
         }
-        curr.next = newNode;
+        curr.next = new ListNode<>(curr, item, curr.next);
         size++;
     }
 
@@ -148,7 +158,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return new SinglyListIterator();
+        return new DoublyListIterator();
     }
 
 
@@ -156,19 +166,21 @@ public class SinglyLinkedList<E> implements Iterable<E> {
 
         private T item;
         private ListNode<T> next;
+        private ListNode<T> prev;
 
-        public ListNode(T value, ListNode<T> next) {
+        public ListNode(ListNode<T> prev, T value, ListNode<T> next) {
             this.item = value;
             this.next = next;
+            this.prev = prev;
         }
 
     }
 
-    private class SinglyListIterator implements Iterator<E> {
+    private class DoublyListIterator implements Iterator<E> {
 
         private ListNode<E> nextNode;
 
-        public SinglyListIterator() {
+        public DoublyListIterator() {
             this.nextNode = head;
         }
 
