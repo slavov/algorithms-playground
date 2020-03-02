@@ -1,10 +1,10 @@
 package sequences.fastAndSlowPointer;
 
-class ListNode<T> {
-    T val;
-    ListNode<T> next;
+public class ListNode<T> {
+    public T val;
+    public ListNode<T> next;
 
-    ListNode(T x) {
+    public ListNode(T x) {
         val = x;
         next = null;
     }
