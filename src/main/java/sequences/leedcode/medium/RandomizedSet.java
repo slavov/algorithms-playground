@@ -1,4 +1,4 @@
-package sequences.leedcode;
+package sequences.leedcode.medium;
 
 import java.util.ArrayList;
 import java.util.HashMap;

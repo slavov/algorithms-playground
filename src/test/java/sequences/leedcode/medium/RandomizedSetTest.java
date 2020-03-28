@@ -1,6 +1,7 @@
-package sequences.leedcode;
+package sequences.leedcode.medium;
 
 import org.junit.jupiter.api.Test;
+import sequences.leedcode.medium.RandomizedSet;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
