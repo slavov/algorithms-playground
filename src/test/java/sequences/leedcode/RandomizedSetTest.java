@@ -11,7 +11,7 @@ class RandomizedSetTest {
     private RandomizedSet instance = new RandomizedSet();
 
     @Test
-    void success() {
+    void testCaseOne() {
         assertTrue(instance.insert(1));
         assertFalse(instance.remove(2));
         assertTrue(instance.insert(2));
@@ -20,4 +20,22 @@ class RandomizedSetTest {
         assertEquals(2, instance.getRandom());
     }
 
+    @Test
+    void testCaseTwo() {
+        assertTrue(instance.insert(0));
+        assertTrue(instance.insert(1));
+        assertTrue(instance.remove(0));
+        assertTrue(instance.insert(2));
+        assertTrue(instance.remove(1));
+        assertEquals(2, instance.getRandom());
+    }
+
+    @Test
+    void testCaseThree() {
+        assertFalse(instance.remove(0));
+        assertFalse(instance.remove(0));
+        assertTrue(instance.insert(0));
+        assertTrue(instance.remove(0));
+        assertTrue(instance.insert(0));
+    }
 }

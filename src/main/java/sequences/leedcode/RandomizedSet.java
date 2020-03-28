@@ -49,10 +49,13 @@ public class RandomizedSet {
         if (!map.containsKey(val)) {
             return false;
         }
-        var idx = map.remove(val);
         var lastElement = list.get(list.size() - 1);
+        var idx = map.get(val);
         list.set(idx, lastElement);
+        map.put(lastElement, idx);
+
         list.remove(list.size() - 1);
+        map.remove(val);
         return true;
     }
 
