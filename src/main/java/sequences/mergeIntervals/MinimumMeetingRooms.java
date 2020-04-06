@@ -42,15 +42,15 @@ public class MinimumMeetingRooms {
             return 0;
         }
         Arrays.sort(intervals, Comparator.comparingInt(i -> i[0]));
-        PriorityQueue<int[]> queue = new PriorityQueue<>(intervals.length, Comparator.comparingInt(i -> i[1]));
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>(intervals.length, Comparator.comparingInt(i -> i[1]));
         int minRooms = 0;
 
         for (int i = 0; i < intervals.length; i++) {
-            if (queue.isEmpty() || intervals[i][0] >= queue.peek()[1]) {
-                queue.poll();
+            if (minHeap.isEmpty() || intervals[i][0] >= minHeap.peek()[1]) {
+                minHeap.poll();
             }
-            queue.offer(intervals[i]);
-            minRooms = Math.max(minRooms, queue.size());
+            minHeap.offer(intervals[i]);
+            minRooms = Math.max(minRooms, minHeap.size());
         }
 
         return minRooms;
