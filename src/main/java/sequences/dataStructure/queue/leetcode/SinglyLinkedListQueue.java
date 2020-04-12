@@ -1,24 +1,24 @@
-package sequences.dataStructure.queue;
+package sequences.dataStructure.queue.leetcode;
 
 /**
  * Design your implementation of the circular queue.
  * LeetCode: <a href="https://leetcode.com/problems/design-circular-queue/">622. Design Circular Queue</a>
  */
-class ArrayCircularQueue {
-
-    private int[] queue;
-    //size of the array
-    private int capacity;
-    //indice of head elements in the array
-    private int headIndex;
-    // length of the queue
+public class SinglyLinkedListQueue {
+    //the reference to the head element in the queue.
+    private Node head;
+    //the reference to the tail element in the queue.
+    private Node tail;
+    //the current length of the queue. This is a critical attribute that helps us to do the boundary check in each method.
     private int count;
+    //the maximum number of elements that the circular queue will hold.
+    //Unlike the Array approach, we need to explicitly keep the reference to the tail element. Without this attribute, it would take us O(N) time complexity to locate the tail element from the head element.
+    private int capacity;
 
     /**
      * Initialize your data structure here. Set the size of the queue to be k.
      */
-    public ArrayCircularQueue(int k) {
-        this.queue = new int[k];
+    public SinglyLinkedListQueue(int k) {
         this.capacity = k;
     }
 
@@ -27,7 +27,13 @@ class ArrayCircularQueue {
      */
     public boolean enQueue(int value) {
         if (isFull()) return false;
-        queue[(headIndex + count) % capacity] = value;
+        var newNode = new Node(value);
+        if (isEmpty()) {
+            head = tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
         count++;
         return true;
     }
@@ -37,7 +43,7 @@ class ArrayCircularQueue {
      */
     public boolean deQueue() {
         if (isEmpty()) return false;
-        headIndex = (headIndex + 1) % capacity;
+        head = head.next;
         count--;
         return true;
     }
@@ -47,7 +53,7 @@ class ArrayCircularQueue {
      */
     public int front() {
         if (isEmpty()) return -1;
-        return queue[headIndex];
+        return head.val;
     }
 
     /**
@@ -55,7 +61,7 @@ class ArrayCircularQueue {
      */
     public int rear() {
         if (isEmpty()) return -1;
-        return queue[tailIndex()];
+        return tail.val;
     }
 
     /**
@@ -71,8 +77,14 @@ class ArrayCircularQueue {
     public boolean isFull() {
         return count == capacity;
     }
+}
 
-    private int tailIndex() {
-        return (headIndex + count - 1) % capacity;
+class Node {
+    public int val;
+    public Node next;
+
+    public Node(int val) {
+        this.val = val;
+        this.next = null;
     }
 }

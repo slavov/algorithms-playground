@@ -1,4 +1,4 @@
-package sequences.dataStructure.queue;
+package sequences.dataStructure.queue.leetcode;
 
 import org.junit.jupiter.api.Test;
 
