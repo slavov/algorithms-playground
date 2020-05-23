@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
@@ -58,9 +59,7 @@ class BinaryHeapQuickRemovalsTest {
             BinaryHeapQuickRemovals<Integer> pq = new BinaryHeapQuickRemovals<>(lst);
 
             PriorityQueue<Integer> pq2 = new PriorityQueue<>(i);
-            for (int x : lst) {
-                pq2.add(x);
-            }
+            pq2.addAll(Arrays.asList(lst));
 
             assertTrue(pq.isMinHeap(0));
             while (!pq2.isEmpty()) {
@@ -73,18 +72,18 @@ class BinaryHeapQuickRemovalsTest {
     public void clear() {
 
         BinaryHeapQuickRemovals<String> q;
-        String[] strs = {"aa", "bb", "cc", "dd", "ee"};
-        q = new BinaryHeapQuickRemovals<>(strs);
+        String[] strings = {"aa", "bb", "cc", "dd", "ee"};
+        q = new BinaryHeapQuickRemovals<>(strings);
         q.clear();
-        assertEquals(q.size(), 0);
+        assertEquals(0, q.size());
         assertTrue(q.isEmpty());
     }
 
     @Test
     public void containment() {
 
-        String[] strs = {"aa", "bb", "cc", "dd", "ee"};
-        BinaryHeapQuickRemovals<String> q = new BinaryHeapQuickRemovals<>(strs);
+        String[] strings = {"aa", "bb", "cc", "dd", "ee"};
+        BinaryHeapQuickRemovals<String> q = new BinaryHeapQuickRemovals<>(strings);
         q.remove("aa");
         assertFalse(q.contains("aa"));
         q.remove("bb");
@@ -105,14 +104,13 @@ class BinaryHeapQuickRemovalsTest {
             List<Integer> randNums = genRandList(100);
             PriorityQueue<Integer> pq = new PriorityQueue<>();
             BinaryHeapQuickRemovals<Integer> bhqr = new BinaryHeapQuickRemovals<>();
-            for (int j = 0; j < randNums.size(); j++) {
-                bhqr.add(randNums.get(j));
-                pq.add(randNums.get(j));
+            for (Integer randNum : randNums) {
+                bhqr.add(randNum);
+                pq.add(randNum);
             }
 
-            for (int j = 0; j < randNums.size(); j++) {
+            for (int randVal : randNums) {
 
-                int randVal = randNums.get(j);
                 assertEquals(bhqr.contains(randVal), pq.contains(randVal));
                 bhqr.remove(randVal);
                 pq.remove(randVal);
@@ -151,17 +149,17 @@ class BinaryHeapQuickRemovalsTest {
         Integer[] in = new Integer[] {2, 7, 2, 11, 7, 13, 2};
         BinaryHeapQuickRemovals<Integer> pq = new BinaryHeapQuickRemovals<>(in);
 
-        assertTrue(pq.peek() == 2);
+        assertEquals(2, pq.peek());
         pq.add(3);
 
-        assertTrue(pq.poll() == 2);
-        assertTrue(pq.poll() == 2);
-        assertTrue(pq.poll() == 2);
-        assertTrue(pq.poll() == 3);
-        assertTrue(pq.poll() == 7);
-        assertTrue(pq.poll() == 7);
-        assertTrue(pq.poll() == 11);
-        assertTrue(pq.poll() == 13);
+        assertEquals(2, pq.poll());
+        assertEquals(2, pq.poll());
+        assertEquals(2, pq.poll());
+        assertEquals(3, pq.poll());
+        assertEquals(7, pq.poll());
+        assertEquals(7, pq.poll());
+        assertEquals(11, pq.poll());
+        assertEquals(13, pq.poll());
     }
 
     @Test
@@ -169,8 +167,7 @@ class BinaryHeapQuickRemovalsTest {
 
         for (int i = 0; i < LOOPS; i++) {
 
-            int sz = i;
-            List<Integer> randNums = genRandList(sz);
+            List<Integer> randNums = genRandList(i);
             PriorityQueue<Integer> pq1 = new PriorityQueue<>();
             BinaryHeapQuickRemovals<Integer> pq2 = new BinaryHeapQuickRemovals<>();
 
@@ -203,8 +200,7 @@ class BinaryHeapQuickRemovalsTest {
 
         for (int i = 0; i < LOOPS; i++) {
 
-            int sz = i;
-            List<Integer> randNums = genRandList(sz);
+            List<Integer> randNums = genRandList(i);
             PriorityQueue<Integer> pq1 = new PriorityQueue<>();
             BinaryHeapQuickRemovals<Integer> pq2 = new BinaryHeapQuickRemovals<>();
 
@@ -236,7 +232,7 @@ class BinaryHeapQuickRemovalsTest {
     @Test
     public void pqReusability() {
 
-        List<Integer> sizes = genUniqueRandList(LOOPS);
+        List<Integer> sizes = genUniqueRandList();
 
         PriorityQueue<Integer> PQ = new PriorityQueue<>();
         BinaryHeapQuickRemovals<Integer> pq = new BinaryHeapQuickRemovals<>();
@@ -291,9 +287,7 @@ class BinaryHeapQuickRemovalsTest {
 
         assertTrue(bhqr.isMinHeap(0));
 
-        for (int i = 0; i < removeOrder.length; i++) {
-
-            int elem = removeOrder[i];
+        for (int elem : removeOrder) {
 
             assertSame(bhqr.peek(), pq.peek());
             assertEquals(bhqr.remove(elem), pq.remove(elem));
@@ -321,9 +315,9 @@ class BinaryHeapQuickRemovalsTest {
     }
 
     // Generate a list of unique random numbers
-    private List<Integer> genUniqueRandList(int sz) {
-        List<Integer> lst = new ArrayList<>(sz);
-        for (int i = 0; i < sz; i++) {
+    private List<Integer> genUniqueRandList() {
+        List<Integer> lst = new ArrayList<>(LOOPS);
+        for (int i = 0; i < LOOPS; i++) {
             lst.add(i);
         }
         Collections.shuffle(lst);
