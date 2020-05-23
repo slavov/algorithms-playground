@@ -1,11 +1,17 @@
 package sequences.dataStructure.queue;
 
+import java.util.Deque;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/**
+ * Queue implementation using Doubly Linked List
+ *
+ * @param <T>
+ */
 public class Queue<T> implements Iterable<T> {
 
-    private LinkedList<T> list = new LinkedList<>();
+    private Deque<T> list = new LinkedList<>();
 
     /**
      * Peek the element from without removing the front of the queue
