@@ -1,4 +1,4 @@
-package sequences.leedcode.challenge;
+package sequences.leedcode.medium;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;

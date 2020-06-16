@@ -1,6 +1,7 @@
-package sequences.leedcode.challenge;
+package sequences.leedcode.medium;
 
 import org.junit.jupiter.api.Test;
+import sequences.leedcode.medium.FirstUnique;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
