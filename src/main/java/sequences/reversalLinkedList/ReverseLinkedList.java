@@ -1,4 +1,4 @@
-package sequences.leedcode;
+package sequences.reversalLinkedList;
 
 import sequences.fastAndSlowPointer.ListNode;
 
@@ -11,7 +11,7 @@ import sequences.fastAndSlowPointer.ListNode;
  * <p>
  * Follow up:
  * A linked list can be reversed either iteratively or recursively. Could you implement both?
- *
+ * <p>
  * LeetCode: <a href="https://leetcode.com/problems/reverse-linked-list/">206. Reverse Linked List</a>
  */
 public class ReverseLinkedList<T> {

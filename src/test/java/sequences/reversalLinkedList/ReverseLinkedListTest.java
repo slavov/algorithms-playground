@@ -1,10 +1,10 @@
-package sequences.leedcode;
+package sequences.reversalLinkedList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import sequences.fastAndSlowPointer.ListNode;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ReverseLinkedListTest {
 
@@ -13,7 +13,7 @@ class ReverseLinkedListTest {
 
     @BeforeEach
     void setUp() {
-        int[] output = new int[]{1, 2, 3, 4, 5};
+        int[] output = new int[] {1, 2, 3, 4, 5};
 
         head = toListNode(output);
     }
