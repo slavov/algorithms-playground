@@ -1,8 +1,9 @@
 package sequences.reversalLinkedList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+
 import sequences.fastAndSlowPointer.ListNode;
 
 class ReverseLinkedListIITest {
@@ -11,7 +12,7 @@ class ReverseLinkedListIITest {
 
     @Test
     void success() {
-        //given
+        // given
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
@@ -22,5 +23,4 @@ class ReverseLinkedListIITest {
         ListNode result = solution.reverseBetween(head, 2, 4);
         assertEquals(4, result.next.val);
     }
-
 }

@@ -22,7 +22,11 @@ public class Job {
         for (String s : split) {
             String replaced = s.replaceAll("[\\[\\]]", "");
             String[] numbers = replaced.split(",\\s*");
-            result.add(new Job(Integer.parseInt(numbers[0]), Integer.parseInt(numbers[1]), Integer.parseInt(numbers[2])));
+            result.add(
+                    new Job(
+                            Integer.parseInt(numbers[0]),
+                            Integer.parseInt(numbers[1]),
+                            Integer.parseInt(numbers[2])));
         }
         return result;
     }
@@ -41,12 +45,6 @@ public class Job {
 
     @Override
     public String toString() {
-        return "[" +
-                start +
-                ", " +
-                end +
-                ", " +
-                cpuLoad +
-                "]";
+        return "[" + start + ", " + end + ", " + cpuLoad + "]";
     }
 }

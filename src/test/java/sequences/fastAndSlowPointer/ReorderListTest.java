@@ -1,10 +1,10 @@
 package sequences.fastAndSlowPointer;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class ReorderListTest {
 
@@ -38,5 +38,4 @@ class ReorderListTest {
         instance.reorderList(head);
         assertThat(head.toString(), equalTo("1,5,2,4,3"));
     }
-
 }

@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Build aggregator for a report, which will hold sold products and a sum of their prices converted to EUR currency.
- * To convert price to EUR use EURExchangeService.
+ * Build aggregator for a report, which will hold sold products and a sum of their prices converted
+ * to EUR currency. To convert price to EUR use EURExchangeService.
  */
 public class SoldProductsAggregator {
 
@@ -23,12 +23,15 @@ public class SoldProductsAggregator {
         if (products == null) {
             return new SoldProductsAggregate(Collections.emptyList(), BigDecimal.ZERO);
         }
-        List<SimpleSoldProduct> simpleSoldProducts = products.filter(this::hasExchangeRate)
-                .map(this::toSimpleProduct)
-                .collect(Collectors.toList());
+        List<SimpleSoldProduct> simpleSoldProducts =
+                products.filter(this::hasExchangeRate)
+                        .map(this::toSimpleProduct)
+                        .collect(Collectors.toList());
 
-        Optional<BigDecimal> sum = simpleSoldProducts.stream()
-                .map(SimpleSoldProduct::getPrice).reduce(BigDecimal::add);
+        Optional<BigDecimal> sum =
+                simpleSoldProducts.stream()
+                        .map(SimpleSoldProduct::getPrice)
+                        .reduce(BigDecimal::add);
 
         return new SoldProductsAggregate(simpleSoldProducts, sum.orElse(BigDecimal.ZERO));
     }
@@ -38,15 +41,17 @@ public class SoldProductsAggregator {
         return new SimpleSoldProduct(sp.name, sp.getPrice().multiply(exchangeRate));
     }
 
-
     private boolean hasExchangeRate(SoldProduct sp) {
-        return exchangeService.rate(sp.getCurrency()).orElse(BigDecimal.valueOf(-1)).compareTo(BigDecimal.ZERO) > 0;
+        return exchangeService
+                        .rate(sp.getCurrency())
+                        .orElse(BigDecimal.valueOf(-1))
+                        .compareTo(BigDecimal.ZERO)
+                > 0;
     }
 
     private BigDecimal getExchangeRate(SoldProduct sp) {
         return exchangeService.rate(sp.getCurrency()).get();
     }
-
 }
 
 class EURExchangeService {
@@ -92,5 +97,3 @@ class SimpleSoldProduct {
         return price;
     }
 }
-
-

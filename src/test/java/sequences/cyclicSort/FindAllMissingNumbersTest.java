@@ -14,5 +14,4 @@ class FindAllMissingNumbersTest {
         var numbers = instance.findDisappearedNumbers(new int[] {4, 3, 2, 7, 8, 2, 3, 1});
         assertThat(numbers, contains(5, 6));
     }
-
 }

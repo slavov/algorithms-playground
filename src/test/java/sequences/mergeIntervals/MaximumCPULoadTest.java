@@ -1,10 +1,10 @@
 package sequences.mergeIntervals;
 
-import org.junit.jupiter.api.Test;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static sequences.helpers.Job.buildList;
+
+import org.junit.jupiter.api.Test;
 
 class MaximumCPULoadTest {
 
@@ -17,7 +17,7 @@ class MaximumCPULoadTest {
 
     @Test
     void textMaxCpuLoad2() {
-        assertThat(instance.findMaxCPULoad(buildList("[[6,7,10], [2,4,11], [8,12,15]]")), equalTo(15));
+        assertThat(
+                instance.findMaxCPULoad(buildList("[[6,7,10], [2,4,11], [8,12,15]]")), equalTo(15));
     }
-
 }

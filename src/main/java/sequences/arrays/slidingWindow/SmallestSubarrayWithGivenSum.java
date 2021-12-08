@@ -1,12 +1,11 @@
 package sequences.arrays.slidingWindow;
 
 /**
- * Given an array of positive numbers and a positive number ‘S’,
- * find the length of the smallest contiguous subarray whose sum is greater than or equal to ‘S’.
- * Return 0, if no such subarray exists.
- * <p>
- * Time complexity: O(n)
- * Space complexity: O(1)
+ * Given an array of positive numbers and a positive number ‘S’, find the length of the smallest
+ * contiguous subarray whose sum is greater than or equal to ‘S’. Return 0, if no such subarray
+ * exists.
+ *
+ * <p>Time complexity: O(n) Space complexity: O(1)
  */
 class SmallestSubarrayWithGivenSum {
 

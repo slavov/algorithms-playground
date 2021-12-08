@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Given a string and a pattern, find all anagrams of the pattern in the given string.
- * Anagram is actually a Permutation of a string.
+ * Given a string and a pattern, find all anagrams of the pattern in the given string. Anagram is
+ * actually a Permutation of a string.
  */
 class StringAnagrams {
 

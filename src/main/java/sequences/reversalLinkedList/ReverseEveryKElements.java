@@ -3,11 +3,14 @@ package sequences.reversalLinkedList;
 import sequences.fastAndSlowPointer.ListNode;
 
 /**
- * Given the head of a LinkedList and a number ‘k’, reverse every alternating ‘k’ sized sub-list starting from the head.
- * <p>
- * If, in the end, you are left with a sub-list with less than ‘k’ elements, reverse it too.
- * <p>
- * Educative: <a href="https://www.educative.io/courses/grokking-the-coding-interview/m2YYJJRP9KG">Reverse alternating K-element Sub-list (medium)</a>
+ * Given the head of a LinkedList and a number ‘k’, reverse every alternating ‘k’ sized sub-list
+ * starting from the head.
+ *
+ * <p>If, in the end, you are left with a sub-list with less than ‘k’ elements, reverse it too.
+ *
+ * <p>Educative: <a
+ * href="https://www.educative.io/courses/grokking-the-coding-interview/m2YYJJRP9KG">Reverse
+ * alternating K-element Sub-list (medium)</a>
  */
 public class ReverseEveryKElements {
 

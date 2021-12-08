@@ -4,15 +4,14 @@ import sequences.fastAndSlowPointer.ListNode;
 
 /**
  * Reverse a singly linked list.
- * <p>
- * Example:
- * Input: 1->2->3->4->5->NULL
- * Output: 5->4->3->2->1->NULL
- * <p>
- * Follow up:
- * A linked list can be reversed either iteratively or recursively. Could you implement both?
- * <p>
- * LeetCode: <a href="https://leetcode.com/problems/reverse-linked-list-ii/">92. Reverse Linked List II</a>
+ *
+ * <p>Example: Input: 1->2->3->4->5->NULL Output: 5->4->3->2->1->NULL
+ *
+ * <p>Follow up: A linked list can be reversed either iteratively or recursively. Could you
+ * implement both?
+ *
+ * <p>LeetCode: <a href="https://leetcode.com/problems/reverse-linked-list-ii/">92. Reverse Linked
+ * List II</a>
  */
 public class ReverseLinkedListII {
 

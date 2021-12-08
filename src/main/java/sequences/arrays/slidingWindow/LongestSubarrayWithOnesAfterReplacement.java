@@ -4,8 +4,7 @@ package sequences.arrays.slidingWindow;
  * Given an array containing 0s and 1s, if you are allowed to replace no more than ‘k’ 0s with 1s,
  * find the length of the longest contiguous subarray having all 1s.
  *
- * Time complexity: O(n)
- * Space complexity: O(1)
+ * <p>Time complexity: O(n) Space complexity: O(1)
  */
 class LongestSubarrayWithOnesAfterReplacement {
 

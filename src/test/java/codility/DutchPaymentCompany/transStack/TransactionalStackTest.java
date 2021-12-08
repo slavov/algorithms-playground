@@ -12,12 +12,12 @@ class TransactionalStackTest {
     void useCaseOne() {
         TransactionalStack obj = new TransactionalStack();
         obj.push(4);
-        obj.begin(); //start transaction 1
+        obj.begin(); // start transaction 1
         obj.push(7); // stack: [4,7]
         obj.begin(); // start transaction 2
         obj.push(3); // stack: [4,7,3]
         assertTrue(obj.rollback()); // returns true; rollbacks transaction 2
-        assertEquals(7, obj.top()); //returns 7. stack: [4,7]
+        assertEquals(7, obj.top()); // returns 7. stack: [4,7]
         obj.begin(); // start transaction 3
         obj.push(8); // stack: [4,7,8]
         assertTrue(obj.commit()); // returns true; commits transaction 3
@@ -36,5 +36,4 @@ class TransactionalStackTest {
         assertTrue(obj.commit());
         assertEquals(3, obj.top());
     }
-
 }

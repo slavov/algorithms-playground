@@ -1,14 +1,14 @@
 package sequences.dataStructure.stack;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import java.util.EmptyStackException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.EmptyStackException;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class StackTest {
 
@@ -72,5 +72,4 @@ class StackTest {
         assertEquals(0, stack.size());
         assertTrue(stack.isEmpty());
     }
-
 }

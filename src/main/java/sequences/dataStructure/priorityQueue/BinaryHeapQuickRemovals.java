@@ -19,10 +19,9 @@ public class BinaryHeapQuickRemovals<T extends Comparable<T>> {
     private final List<T> heap;
 
     /**
-     * This map keeps track of the possible indices a particular
-     * node value is found in the heap. Having this mapping lets
-     * us have O(log(n)) removals and O(1) element containment check
-     * at the cost of some additional space and minor overhead
+     * This map keeps track of the possible indices a particular node value is found in the heap.
+     * Having this mapping lets us have O(log(n)) removals and O(1) element containment check at the
+     * cost of some additional space and minor overhead
      */
     private final Map<T, TreeSet<Integer>> map = new HashMap<>();
 
@@ -71,8 +70,8 @@ public class BinaryHeapQuickRemovals<T extends Comparable<T>> {
     }
 
     /**
-     * Retrieves and removes the head of this queue, O(log(n))
-     * or returns {@code null} if this queue is empty.
+     * Retrieves and removes the head of this queue, O(log(n)) or returns {@code null} if this queue
+     * is empty.
      *
      * @return the head of this queue, or {@code null} if this queue is empty
      */
@@ -81,8 +80,8 @@ public class BinaryHeapQuickRemovals<T extends Comparable<T>> {
     }
 
     /**
-     * Returns the value of the element with the lowest priority in this priority queue.
-     * If the priority queue is empty null is returned.
+     * Returns the value of the element with the lowest priority in this priority queue. If the
+     * priority queue is empty null is returned.
      *
      * @return value of the element with the lowest priority
      */
@@ -94,8 +93,7 @@ public class BinaryHeapQuickRemovals<T extends Comparable<T>> {
     }
 
     /**
-     * Adds an element to the priority queue, the element must not be null,
-     * O(log(n))
+     * Adds an element to the priority queue, the element must not be null, O(log(n))
      *
      * @param element to add
      */
@@ -139,25 +137,25 @@ public class BinaryHeapQuickRemovals<T extends Comparable<T>> {
     }
 
     public boolean contains(T elem) {
-        //map lookup for O(1)
+        // map lookup for O(1)
         if (elem == null) {
             return false;
         }
         return map.containsKey(elem);
 
         // Linear scan to check containment
-        //for (int i = 0; i < size(); i++) {
+        // for (int i = 0; i < size(); i++) {
         //    if (heap.get(i).equals(elem)) {
         //        return true;
         //    }
-        //}
+        // }
         // return false;
     }
 
     /**
-     * Recursively checks if this heap is a min heap
-     * This method is just for testing purposes to make sure the heap invariant is still being maintained
-     * Called this method with k=0 to start at the root
+     * Recursively checks if this heap is a min heap This method is just for testing purposes to
+     * make sure the heap invariant is still being maintained Called this method with k=0 to start
+     * at the root
      *
      * @param k node position
      * @return true if this heap is a min heap
@@ -285,8 +283,7 @@ public class BinaryHeapQuickRemovals<T extends Comparable<T>> {
     }
 
     /**
-     * Tests if the value of node i <= node j
-     * This method assumes i & j are valid indices, O(1)
+     * Tests if the value of node i <= node j This method assumes i & j are valid indices, O(1)
      *
      * @param i first element
      * @param j second element
@@ -334,8 +331,8 @@ public class BinaryHeapQuickRemovals<T extends Comparable<T>> {
     }
 
     /**
-     * Extract an index position for the given value
-     * NOTE: If a value exists multiple times in the heap the highest
+     * Extract an index position for the given value NOTE: If a value exists multiple times in the
+     * heap the highest
      *
      * @param value of the heap
      * @return index is returned (this has arbitrarily been chosen)
@@ -351,8 +348,8 @@ public class BinaryHeapQuickRemovals<T extends Comparable<T>> {
     /**
      * Exchange the index of two nodes internally within the map
      *
-     * @param val1      first value
-     * @param val2      second value
+     * @param val1 first value
+     * @param val2 second value
      * @param val1Index first value index
      * @param val2Index second value index
      */

@@ -13,25 +13,31 @@ public class VisitCounter {
             return result;
         }
 
-        Arrays.stream(visits).filter(Objects::nonNull)
-            .forEach(visit -> visit.forEach((key, userStats) -> {
-                if (!isNumber(key)) {
-                    return;
-                }
-                Long newKey = Long.valueOf(key);
-                if (userStats == null) {
-                    return;
-                }
-                if (!userStats.getVisitCount().isPresent()) {
-                    return;
-                }
-                if (result.get(newKey) != null) {
-                    Long value = result.get(newKey);
-                    result.put(newKey, userStats.getVisitCount().get() + value);
-                } else {
-                    result.put(newKey, userStats.getVisitCount().get());
-                }
-            }));
+        Arrays.stream(visits)
+                .filter(Objects::nonNull)
+                .forEach(
+                        visit ->
+                                visit.forEach(
+                                        (key, userStats) -> {
+                                            if (!isNumber(key)) {
+                                                return;
+                                            }
+                                            Long newKey = Long.valueOf(key);
+                                            if (userStats == null) {
+                                                return;
+                                            }
+                                            if (!userStats.getVisitCount().isPresent()) {
+                                                return;
+                                            }
+                                            if (result.get(newKey) != null) {
+                                                Long value = result.get(newKey);
+                                                result.put(
+                                                        newKey,
+                                                        userStats.getVisitCount().get() + value);
+                                            } else {
+                                                result.put(newKey, userStats.getVisitCount().get());
+                                            }
+                                        }));
 
         return result;
     }

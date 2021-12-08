@@ -4,31 +4,44 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Given a string, find the length of the longest substring in it with no more than K distinct characters.
- * <p>
- * Time complexity: O(n)
- * Space complexity: O(k)
+ * Given a string, find the length of the longest substring in it with no more than K distinct
+ * characters.
+ *
+ * <p>Time complexity: O(n) Space complexity: O(k)
  */
 class LongestSubstringKDistinct {
 
-    int findLength(String str, int k) {
+    private static int findLength(String str, int k) {
         Map<Character, Integer> charFrequencyMap = new HashMap<>();
-        int windowStart = 0;
+        int l = 0;
         int max = 0;
 
-        for (int i = 0; i < str.length(); i++) {
-            final char c = str.charAt(i);
-            charFrequencyMap.put(c, charFrequencyMap.getOrDefault(c, 0) + 1);
+        for (int r = 0; r < str.length(); r++) {
+            charFrequencyMap.put(
+                    str.charAt(r), charFrequencyMap.getOrDefault(str.charAt(r), 0) + 1);
             while (charFrequencyMap.size() > k) {
-                final char left = str.charAt(windowStart);
-                charFrequencyMap.put(left, charFrequencyMap.get(left) - 1);
-                if (charFrequencyMap.get(left) == 0) {
-                    charFrequencyMap.remove(left);
+                var c = str.charAt(l);
+                charFrequencyMap.put(c, charFrequencyMap.get(c) - 1);
+                if (charFrequencyMap.get(c) == 0) {
+                    charFrequencyMap.remove(c);
                 }
-                windowStart++;
+                l++;
             }
-            max = Math.max(max, i - windowStart + 1);
+            max = Math.max(max, r - l + 1);
         }
+
         return max;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(
+                "longest substring in it with no more than K distinct characters: "
+                        + findLength("araaci", 2));
+        System.out.println(
+                "longest substring in it with no more than K distinct characters: "
+                        + findLength("araaci", 1));
+        System.out.println(
+                "longest substring in it with no more than K distinct characters: "
+                        + findLength("cbbebi", 3));
     }
 }

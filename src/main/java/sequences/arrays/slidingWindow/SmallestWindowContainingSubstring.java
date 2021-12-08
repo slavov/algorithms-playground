@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Given a string and a pattern,
- * find the smallest substring in the given string which has all the characters of the given pattern.
+ * Given a string and a pattern, find the smallest substring in the given string which has all the
+ * characters of the given pattern.
  *
- * Time Complexity:  O(N + M)O(N+M) where ‘N’ and ‘M’ are the number of characters in the input string and the pattern
- * Space Complexity: O(M) since in the worst case,
- *                   the whole pattern can have distinct characters which will go into the HashMap.
- *                   In the worst case, we also need O(N)O(N) space for the resulting substring,
- *                   which will happen when the input string is a permutation of the pattern.
+ * <p>Time Complexity: O(N + M)O(N+M) where ‘N’ and ‘M’ are the number of characters in the input
+ * string and the pattern Space Complexity: O(M) since in the worst case, the whole pattern can have
+ * distinct characters which will go into the HashMap. In the worst case, we also need O(N)O(N)
+ * space for the resulting substring, which will happen when the input string is a permutation of
+ * the pattern.
  */
 class SmallestWindowContainingSubstring {
 

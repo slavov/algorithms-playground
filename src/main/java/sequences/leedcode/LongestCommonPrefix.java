@@ -1,7 +1,8 @@
 package sequences.leedcode;
 
 /**
- * LeetCode Premium: <a href="https://leetcode.com/problems/longest-common-prefix/">14. Longest Common Prefix</a>
+ * LeetCode Premium: <a href="https://leetcode.com/problems/longest-common-prefix/">14. Longest
+ * Common Prefix</a>
  */
 public class LongestCommonPrefix {
 
@@ -20,5 +21,4 @@ public class LongestCommonPrefix {
         }
         return prefix;
     }
-
 }

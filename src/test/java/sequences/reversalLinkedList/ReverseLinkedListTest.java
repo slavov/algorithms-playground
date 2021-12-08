@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import sequences.fastAndSlowPointer.ListNode;
 
 class ReverseLinkedListTest {
@@ -38,5 +39,4 @@ class ReverseLinkedListTest {
         }
         return dummyRoot.next;
     }
-
 }

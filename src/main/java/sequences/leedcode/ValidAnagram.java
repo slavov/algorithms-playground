@@ -1,16 +1,14 @@
 package sequences.leedcode;
 
-/**
- * https://leetcode.com/problems/valid-anagram/
- */
+/** https://leetcode.com/problems/valid-anagram/ */
 public class ValidAnagram {
 
     public static boolean isAnagram(String s, String t) {
         int[] chars = new int[26];
-        for(char c: s.toCharArray()) {
+        for (char c : s.toCharArray()) {
             chars[c - 'a']++;
         }
-        for(char c: t.toCharArray()) {
+        for (char c : t.toCharArray()) {
             chars[c - 'a']--;
         }
         for (int aChar : chars) {

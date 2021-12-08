@@ -1,8 +1,9 @@
 package sequences.leedcode.hard;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class RandomizedCollectionTest {
 
@@ -20,5 +21,4 @@ class RandomizedCollectionTest {
         assertTrue(instance.remove(4));
         assertTrue(instance.remove(4));
     }
-
 }

@@ -1,10 +1,10 @@
 package sequences.fastAndSlowPointer;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class HasCyclesTest {
 
@@ -39,5 +39,4 @@ class HasCyclesTest {
         head.next.next.next.next.next.next = head.next.next.next;
         assertThat(instance.hasCycle(head), equalTo(true));
     }
-
 }

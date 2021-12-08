@@ -1,35 +1,33 @@
 package sequences.fastAndSlowPointer;
 
 /**
- * Given the head of a Singly LinkedList, write a method to check if the LinkedList is a palindrome or not.
- * <p>
- * Your algorithm should use constant space and the input LinkedList should be in the original form once the algorithm is finished. The algorithm should have O(N)O(N) time complexity where ‘N’ is the number of nodes in the LinkedList.
- * <p>
- * Example 1:
- * <p>
- * Input: 2 -> 4 -> 6 -> 4 -> 2 -> null
- * Output: true
- * Example 2:
- * <p>
- * Input: 2 -> 4 -> 6 -> 4 -> 2 -> 2 -> null
- * Output: false
+ * Given the head of a Singly LinkedList, write a method to check if the LinkedList is a palindrome
+ * or not.
  *
- * LeetCode: <a href="https://leetcode.com/problems/palindrome-linked-list/">234. Palindrome Linked List</a>
+ * <p>Your algorithm should use constant space and the input LinkedList should be in the original
+ * form once the algorithm is finished. The algorithm should have O(N)O(N) time complexity where ‘N’
+ * is the number of nodes in the LinkedList.
+ *
+ * <p>Example 1:
+ *
+ * <p>Input: 2 -> 4 -> 6 -> 4 -> 2 -> null Output: true Example 2:
+ *
+ * <p>Input: 2 -> 4 -> 6 -> 4 -> 2 -> 2 -> null Output: false
+ *
+ * <p>LeetCode: <a href="https://leetcode.com/problems/palindrome-linked-list/">234. Palindrome
+ * Linked List</a>
  */
 public class PalindromeLinkedList {
 
-    /**
-     * Time complexity O(n)
-     * Space complexity O(1)
-     */
+    /** Time complexity O(n) Space complexity O(1) */
     public boolean isPalindrome(ListNode head) {
-        if (head == null || head.next == null)
-            return true;
+        if (head == null || head.next == null) return true;
 
         // find middle of the LinkedList
         var mid = findMid(head);
         var headSecondHalf = reverse(mid); // reverse the second half
-        var copyHeadSecondHalf = headSecondHalf; // store the head of reversed part to revert back later
+        var copyHeadSecondHalf =
+                headSecondHalf; // store the head of reversed part to revert back later
 
         // compare the first and the second half
         while (head != null && headSecondHalf != null) {

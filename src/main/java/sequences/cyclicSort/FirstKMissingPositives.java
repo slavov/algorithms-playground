@@ -1,6 +1,5 @@
 package sequences.cyclicSort;
 
-
 import static sequences.helpers.Swap.swap;
 
 import java.util.ArrayList;
@@ -8,32 +7,24 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
 /**
- * Given an unsorted array containing numbers and a number ‘k’, find the first ‘k’ missing positive numbers in the array.
- * <p>
- * Example 1:
- * <p>
- * Input: [3, -1, 4, 5, 5], k=3
- * Output: [1, 2, 6]
- * Explanation: The smallest missing positive numbers are 1, 2 and 6.
- * Example 2:
- * <p>
- * Input: [2, 3, 4], k=3
- * Output: [1, 5, 6]
- * Explanation: The smallest missing positive numbers are 1, 5 and 6.
- * Example 3:
- * <p>
- * Input: [-2, -3, 4], k=2
- * Output: [1, 2]
- * Explanation: The smallest missing positive numbers are 1 and 2.
+ * Given an unsorted array containing numbers and a number ‘k’, find the first ‘k’ missing positive
+ * numbers in the array.
+ *
+ * <p>Example 1:
+ *
+ * <p>Input: [3, -1, 4, 5, 5], k=3 Output: [1, 2, 6] Explanation: The smallest missing positive
+ * numbers are 1, 2 and 6. Example 2:
+ *
+ * <p>Input: [2, 3, 4], k=3 Output: [1, 5, 6] Explanation: The smallest missing positive numbers are
+ * 1, 5 and 6. Example 3:
+ *
+ * <p>Input: [-2, -3, 4], k=2 Output: [1, 2] Explanation: The smallest missing positive numbers are
+ * 1 and 2.
  */
 public class FirstKMissingPositives {
 
-    /**
-     * Time complexity O(n + k)
-     * Space complexity O(k)
-     */
+    /** Time complexity O(n + k) Space complexity O(k) */
     public List<Integer> findNumbers(int[] nums, int k) {
         List<Integer> missingNumbers = new ArrayList<>();
         for (int i = 0; i < nums.length; ) {
@@ -55,8 +46,7 @@ public class FirstKMissingPositives {
         for (int i = 1; missingNumbers.size() < k; i++) {
             int candidateNumber = i + nums.length;
             // ignore if the array contains the candidate number
-            if (!extraNumbers.contains(candidateNumber))
-                missingNumbers.add(candidateNumber);
+            if (!extraNumbers.contains(candidateNumber)) missingNumbers.add(candidateNumber);
         }
 
         return missingNumbers;

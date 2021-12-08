@@ -10,13 +10,15 @@ import java.util.Set;
 
 /**
  * Design a data structure that supports all following operations in average O(1) time.
- * <p>
- * Note: Duplicate elements are allowed.
- * insert(val): Inserts an item val to the collection.
- * remove(val): Removes an item val from the collection if present.
- * getRandom: Returns a random element from current collection of elements. The probability of each element being returned is linearly related to the number of same value the collection contains.
  *
- * LeetCode: <a href="https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/">381. Insert Delete GetRandom O(1) - Duplicates allowed</a>
+ * <p>Note: Duplicate elements are allowed. insert(val): Inserts an item val to the collection.
+ * remove(val): Removes an item val from the collection if present. getRandom: Returns a random
+ * element from current collection of elements. The probability of each element being returned is
+ * linearly related to the number of same value the collection contains.
+ *
+ * <p>LeetCode: <a
+ * href="https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/">381. Insert
+ * Delete GetRandom O(1) - Duplicates allowed</a>
  */
 public class RandomizedCollection {
 
@@ -29,7 +31,10 @@ public class RandomizedCollection {
         map = new HashMap<>();
     }
 
-    /** Inserts a value to the collection. Returns true if the collection did not already contain the specified element. */
+    /**
+     * Inserts a value to the collection. Returns true if the collection did not already contain the
+     * specified element.
+     */
     public boolean insert(int val) {
         var isPresent = true;
         if (map.containsKey(val)) {
@@ -40,9 +45,12 @@ public class RandomizedCollection {
         return isPresent;
     }
 
-    /** Removes a value from the collection. Returns true if the collection contained the specified element. */
+    /**
+     * Removes a value from the collection. Returns true if the collection contained the specified
+     * element.
+     */
     public boolean remove(int val) {
-        if(!map.containsKey(val) || map.get(val).size() == 0) {
+        if (!map.containsKey(val) || map.get(val).size() == 0) {
             return false;
         }
 

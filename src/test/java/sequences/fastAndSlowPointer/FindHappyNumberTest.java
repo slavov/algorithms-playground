@@ -1,9 +1,9 @@
 package sequences.fastAndSlowPointer;
 
-import org.junit.jupiter.api.Test;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+
+import org.junit.jupiter.api.Test;
 
 class FindHappyNumberTest {
 
@@ -18,5 +18,4 @@ class FindHappyNumberTest {
     void findNotHappy() {
         assertThat(instance.isHappy(12), equalTo(false));
     }
-
 }

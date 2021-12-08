@@ -1,19 +1,19 @@
 package sequences.dataStructure.linkedList;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.params.provider.Arguments.arguments;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 class SinglyLinkedListTest {
 
@@ -39,16 +39,16 @@ class SinglyLinkedListTest {
 
     @Test
     void addElementSuccess() {
-        //given
+        // given
         list.addFirst(8);
         list.addFirst(22);
         list.addLast(18);
         list.addLast(86);
 
-        //when
+        // when
         list.add(2, 20);
 
-        //then
+        // then
         assertEquals(20, list.get(2));
         assertEquals(86, list.getLast());
         assertEquals(5, list.size());
@@ -56,44 +56,44 @@ class SinglyLinkedListTest {
 
     @Test
     void insertAfterSuccess() {
-        //given
+        // given
         list.addFirst(8);
         list.addFirst(22);
         list.addLast(86);
 
-        //when
+        // when
         list.insertAfter(8, 19);
 
-        //then
+        // then
         assertEquals(19, list.get(2));
     }
 
     @Test
     void insertBeforeSuccess() {
-        //given
+        // given
         list.addFirst(8);
         list.addFirst(22);
         list.addLast(86);
 
-        //when
+        // when
         list.insertBefore(86, 19);
 
-        //then
+        // then
         assertEquals(19, list.get(2));
     }
 
     @Test
     void deleteSuccess() {
-        //given
+        // given
         list.addFirst(8);
         list.addFirst(22);
         list.addLast(19);
         list.addLast(86);
 
-        //when
+        // when
         list.delete(19);
 
-        //then
+        // then
         assertEquals(86, list.get(2));
         assertEquals(8, list.get(1));
         assertEquals(3, list.size());
@@ -101,14 +101,14 @@ class SinglyLinkedListTest {
 
     @Test
     void deleteHeadSuccess() {
-        //given
+        // given
         list.addFirst(8);
         list.addFirst(22);
 
-        //when
+        // when
         list.delete(8);
 
-        //then
+        // then
         assertEquals(22, list.get(0));
         assertEquals(1, list.size());
     }
@@ -132,5 +132,4 @@ class SinglyLinkedListTest {
         }
         return Stream.of(arguments(instance));
     }
-
 }

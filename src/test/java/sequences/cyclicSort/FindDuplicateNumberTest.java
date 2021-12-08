@@ -12,12 +12,10 @@ class FindDuplicateNumberTest {
     @Test
     void testFind() {
         assertThat(instance.findNumber(new int[] {1, 4, 4, 3, 2}), equalTo(4));
-
     }
 
     @Test
     void testFindAll() {
         assertThat(instance.findNumberFastSlow(new int[] {1, 4, 4, 3, 2}), equalTo(4));
     }
-
 }

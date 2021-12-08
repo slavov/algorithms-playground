@@ -4,9 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-/**
- * https://leetcode.com/problems/valid-parentheses/
- */
+/** https://leetcode.com/problems/valid-parentheses/ */
 public class ValidParentheses {
 
     public static boolean isValid(String s) {

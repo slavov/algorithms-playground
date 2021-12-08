@@ -1,12 +1,12 @@
 package sequences.dataStructure.queue;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayDeque;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.ArrayDeque;
+
+import org.junit.jupiter.api.Test;
 
 class IntQueueTest {
 
@@ -122,5 +122,4 @@ class IntQueueTest {
             }
         }
     }
-
 }

@@ -1,22 +1,21 @@
 package sequences.dataStructure.arrayList;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
-import sequences.dataStructure.arrayList.ArrayList;
-
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.stream.Stream;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.stream.Stream;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 class ArrayListTest {
 
@@ -67,7 +66,7 @@ class ArrayListTest {
         Iterator<Integer> iterator = arrayList.iterator();
         assertEquals(0, iterator.next());
         assertEquals(1, iterator.next());
-        for (; iterator.hasNext();) {
+        for (; iterator.hasNext(); ) {
             assertNotNull(iterator.next());
         }
         assertThrows(NoSuchElementException.class, iterator::next);
@@ -80,7 +79,7 @@ class ArrayListTest {
         Iterator<Integer> reverseIterator = arrayList.reverseIterator();
         assertEquals(9, reverseIterator.next());
         assertEquals(8, reverseIterator.next());
-        for (; reverseIterator.hasNext();) {
+        for (; reverseIterator.hasNext(); ) {
             assertNotNull(reverseIterator.next());
         }
         assertThrows(NoSuchElementException.class, reverseIterator::next);
@@ -93,5 +92,4 @@ class ArrayListTest {
         }
         return Stream.of(arguments(instance));
     }
-
 }

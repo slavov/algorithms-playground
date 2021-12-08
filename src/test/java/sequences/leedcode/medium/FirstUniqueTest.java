@@ -1,9 +1,8 @@
 package sequences.leedcode.medium;
 
-import org.junit.jupiter.api.Test;
-import sequences.leedcode.medium.FirstUnique;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 class FirstUniqueTest {
 
@@ -11,7 +10,7 @@ class FirstUniqueTest {
 
     @Test
     void success() {
-        solution = new FirstUnique(new int[]{2, 3, 4});
+        solution = new FirstUnique(new int[] {2, 3, 4});
         assertEquals(2, solution.showFirstUnique());
         solution.add(5);
         assertEquals(2, solution.showFirstUnique());
@@ -23,7 +22,7 @@ class FirstUniqueTest {
 
     @Test
     void caseWhereIhadWrongAnswer() {
-        solution = new FirstUnique(new int[]{7, 7, 7, 7, 7, 7});
+        solution = new FirstUnique(new int[] {7, 7, 7, 7, 7, 7});
         assertEquals(-1, solution.showFirstUnique());
         solution.add(7);
         solution.add(3);
@@ -35,10 +34,9 @@ class FirstUniqueTest {
 
     @Test
     void caseWhereIhadWrongAnswer2() {
-        solution = new FirstUnique(new int[]{233});
+        solution = new FirstUnique(new int[] {233});
         assertEquals(233, solution.showFirstUnique());
         solution.add(11);
         assertEquals(233, solution.showFirstUnique());
     }
-
 }

@@ -1,30 +1,29 @@
 package sequences.dataStructure.queue.leetcode;
 
 /**
- * Design your implementation of the circular queue.
- * LeetCode: <a href="https://leetcode.com/problems/design-circular-queue/">622. Design Circular Queue</a>
+ * Design your implementation of the circular queue. LeetCode: <a
+ * href="https://leetcode.com/problems/design-circular-queue/">622. Design Circular Queue</a>
  */
 public class SinglyLinkedListQueue {
-    //the reference to the head element in the queue.
+    // the reference to the head element in the queue.
     private Node head;
-    //the reference to the tail element in the queue.
+    // the reference to the tail element in the queue.
     private Node tail;
-    //the current length of the queue. This is a critical attribute that helps us to do the boundary check in each method.
+    // the current length of the queue. This is a critical attribute that helps us to do the
+    // boundary check in each method.
     private int count;
-    //the maximum number of elements that the circular queue will hold.
-    //Unlike the Array approach, we need to explicitly keep the reference to the tail element. Without this attribute, it would take us O(N) time complexity to locate the tail element from the head element.
+    // the maximum number of elements that the circular queue will hold.
+    // Unlike the Array approach, we need to explicitly keep the reference to the tail element.
+    // Without this attribute, it would take us O(N) time complexity to locate the tail element from
+    // the head element.
     private int capacity;
 
-    /**
-     * Initialize your data structure here. Set the size of the queue to be k.
-     */
+    /** Initialize your data structure here. Set the size of the queue to be k. */
     public SinglyLinkedListQueue(int k) {
         this.capacity = k;
     }
 
-    /**
-     * Insert an element into the circular queue. Return true if the operation is successful.
-     */
+    /** Insert an element into the circular queue. Return true if the operation is successful. */
     public boolean enQueue(int value) {
         if (isFull()) return false;
         var newNode = new Node(value);
@@ -38,9 +37,7 @@ public class SinglyLinkedListQueue {
         return true;
     }
 
-    /**
-     * Delete an element from the circular queue. Return true if the operation is successful.
-     */
+    /** Delete an element from the circular queue. Return true if the operation is successful. */
     public boolean deQueue() {
         if (isEmpty()) return false;
         head = head.next;
@@ -48,32 +45,24 @@ public class SinglyLinkedListQueue {
         return true;
     }
 
-    /**
-     * Get the front item from the queue.
-     */
+    /** Get the front item from the queue. */
     public int front() {
         if (isEmpty()) return -1;
         return head.val;
     }
 
-    /**
-     * Get the last item from the queue.
-     */
+    /** Get the last item from the queue. */
     public int rear() {
         if (isEmpty()) return -1;
         return tail.val;
     }
 
-    /**
-     * Checks whether the circular queue is empty or not.
-     */
+    /** Checks whether the circular queue is empty or not. */
     public boolean isEmpty() {
         return count == 0;
     }
 
-    /**
-     * Checks whether the circular queue is full or not.
-     */
+    /** Checks whether the circular queue is full or not. */
     public boolean isFull() {
         return count == capacity;
     }

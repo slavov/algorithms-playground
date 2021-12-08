@@ -46,7 +46,6 @@ public class Queue<T> implements Iterable<T> {
         list.addLast(element);
     }
 
-
     public int size() {
         return list.size();
     }

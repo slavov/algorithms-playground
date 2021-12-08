@@ -6,15 +6,15 @@ import java.util.Set;
 
 /**
  * You have a queue of integers, you need to retrieve the first unique integer in the queue.
- * <p>
- * Implement the FirstUnique class:
- * <p>
- * FirstUnique(int[] nums) Initializes the object with the numbers in the queue.
- * int showFirstUnique() returns the value of the first unique integer of the queue, and returns -1 if there is no such integer.
- * void add(int value) insert value to the queue.
  *
- * LeetCode Premium: <a href="https://leetcode.com/problems/first-unique-number/">1429. First Unique Number</a>
+ * <p>Implement the FirstUnique class:
  *
+ * <p>FirstUnique(int[] nums) Initializes the object with the numbers in the queue. int
+ * showFirstUnique() returns the value of the first unique integer of the queue, and returns -1 if
+ * there is no such integer. void add(int value) insert value to the queue.
+ *
+ * <p>LeetCode Premium: <a href="https://leetcode.com/problems/first-unique-number/">1429. First
+ * Unique Number</a>
  */
 class FirstUnique {
 

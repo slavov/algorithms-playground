@@ -7,7 +7,8 @@ import java.util.LinkedList;
 
 /**
  * A linked list implementation of a stack
- * @param <T>  the type of elements
+ *
+ * @param <T> the type of elements
  */
 public class IntStack<T> implements Iterable<T> {
 

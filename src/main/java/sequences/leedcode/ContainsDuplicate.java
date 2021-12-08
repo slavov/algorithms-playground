@@ -3,9 +3,7 @@ package sequences.leedcode;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * https://leetcode.com/problems/contains-duplicate/
- */
+/** https://leetcode.com/problems/contains-duplicate/ */
 public class ContainsDuplicate {
     public static boolean containsDuplicate(int[] nums) {
         if (nums == null || nums.length <= 1) return false;

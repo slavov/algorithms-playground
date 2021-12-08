@@ -6,10 +6,7 @@ package sequences.fastAndSlowPointer;
  */
 public class DetectCycles<T> {
 
-    /**
-     * Time complexity O(n)
-     * Space complexity O(1)
-     */
+    /** Time complexity O(n) Space complexity O(1) */
     public ListNode<T> detectCycle(ListNode<T> head) {
         ListNode<T> slow = head;
         ListNode<T> fast = head;

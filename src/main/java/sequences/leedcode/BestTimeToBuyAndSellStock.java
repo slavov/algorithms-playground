@@ -1,8 +1,6 @@
 package sequences.leedcode;
 
-/**
- * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
- */
+/** https://leetcode.com/problems/best-time-to-buy-and-sell-stock/ */
 public class BestTimeToBuyAndSellStock {
 
     public static int maxProfit(int[] prices) {

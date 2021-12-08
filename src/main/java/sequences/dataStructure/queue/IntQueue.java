@@ -6,7 +6,6 @@ public class IntQueue {
     private int size;
     private int front, end;
 
-
     public IntQueue(int maxSize) {
         this.size = maxSize + 1;
         arr = new int[size];
@@ -46,7 +45,6 @@ public class IntQueue {
     public int peek() {
         return arr[front];
     }
-
 
     public boolean isEmpty() {
         return front == end;

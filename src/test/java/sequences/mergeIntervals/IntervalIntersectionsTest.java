@@ -1,8 +1,8 @@
 package sequences.mergeIntervals;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+import org.junit.jupiter.api.Test;
 
 class IntervalIntersectionsTest {
 
@@ -14,9 +14,9 @@ class IntervalIntersectionsTest {
         int[][] B = {{2, 3}, {5, 7}};
 
         var result = instance.intervalIntersection(A, B);
-        assertArrayEquals(new int[]{2, 3}, result[0]);
-        assertArrayEquals(new int[]{5, 6}, result[1]);
-        assertArrayEquals(new int[]{7, 7}, result[2]);
+        assertArrayEquals(new int[] {2, 3}, result[0]);
+        assertArrayEquals(new int[] {5, 6}, result[1]);
+        assertArrayEquals(new int[] {7, 7}, result[2]);
     }
 
     @Test
@@ -25,8 +25,7 @@ class IntervalIntersectionsTest {
         int[][] B = {{5, 10}};
 
         var result = instance.intervalIntersection(A, B);
-        assertArrayEquals(new int[]{5, 7}, result[0]);
-        assertArrayEquals(new int[]{9, 10}, result[1]);
+        assertArrayEquals(new int[] {5, 7}, result[0]);
+        assertArrayEquals(new int[] {9, 10}, result[1]);
     }
-
 }

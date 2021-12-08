@@ -1,11 +1,11 @@
 package sequences.fastAndSlowPointer;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class DetectCyclesTest {
 
@@ -43,5 +43,4 @@ class DetectCyclesTest {
         var cycle = instance.detectCycle(head);
         assertThat(cycle, is(head.next.next.next));
     }
-
 }

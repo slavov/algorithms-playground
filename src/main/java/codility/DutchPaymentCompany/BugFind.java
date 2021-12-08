@@ -18,24 +18,23 @@ public class BugFind {
                 }
             }
         }
-        //bug was here
+        // bug was here
         int prefSize = Math.min(result.size(), K <= 0 ? result.size() : K);
         return result.subList(0, prefSize).toArray(new String[prefSize]);
     }
 
-
-// How I was trying to find a bug
+    // How I was trying to find a bug
 
     public static void main(String[] args) {
         BugFind s = new BugFind();
-        //s.solution(5,0);
+        // s.solution(5,0);
         for (int i = 1; i <= 10; i++) {
             for (int j = 1; j <= 100; j++) {
 
                 var result = s.solution(i, j);
-                //if (!m(result, j)) {
+                // if (!m(result, j)) {
                 System.out.println("i = " + i + " j = " + j);
-                for(String fs : result) {
+                for (String fs : result) {
                     System.out.print(fs + ", ");
                 }
                 System.out.println();
@@ -45,7 +44,7 @@ public class BugFind {
     }
 
     static boolean m(String[] str, int n) {
-        if(str.length > n) {
+        if (str.length > n) {
             return false;
         }
         if (!isSorted(str, str.length)) {
@@ -57,19 +56,16 @@ public class BugFind {
         return true;
     }
 
-    static private boolean containsDub(String[] str) {
+    private static boolean containsDub(String[] str) {
         for (String s : str) {
-            if (s.contains("aa") || s.contains("bb") || s.contains("cc"))
-                return true;
+            if (s.contains("aa") || s.contains("bb") || s.contains("cc")) return true;
         }
         return false;
     }
 
     static boolean isSorted(String[] array, int length) {
-        if (array == null || length < 2)
-            return true;
-        if (array[length - 2].compareTo(array[length - 1]) > 0)
-            return false;
+        if (array == null || length < 2) return true;
+        if (array[length - 2].compareTo(array[length - 1]) > 0) return false;
         return isSorted(array, length - 1);
     }
 }

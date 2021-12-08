@@ -3,10 +3,9 @@ package sequences.educative;
 import java.util.Arrays;
 
 /**
- * Re-arrange the elements of a sorted array in such a way that the first position will have the largest number,
- * the second will have the smallest, the third will have the second largest, and so on.
- * Input: arr = {1, 2, 3, 4, 5}
- * Output: arr = {5, 1, 4, 2, 3}
+ * Re-arrange the elements of a sorted array in such a way that the first position will have the
+ * largest number, the second will have the smallest, the third will have the second largest, and so
+ * on. Input: arr = {1, 2, 3, 4, 5} Output: arr = {5, 1, 4, 2, 3}
  */
 public class CheckMaxMin {
 

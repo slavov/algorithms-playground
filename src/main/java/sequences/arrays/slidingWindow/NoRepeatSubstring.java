@@ -1,25 +1,52 @@
 package sequences.arrays.slidingWindow;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
-/**
- * Given a string, find the length of the longest substring which has no repeating characters.
- */
+/** Given a string, find the length of the longest substring which has no repeating characters. */
 class NoRepeatSubstring {
 
-    int findLength(String str) {
+    static int findLength(String str) {
         Map<Character, Integer> charIndexMap = new HashMap<>();
-        int windowStart = 0, max = 0;
+        int lo = 0, max = 0;
 
-        for (int i = 0; i < str.length(); i++) {
-            char c = str.charAt(i);
+        for (int hi = 0; hi < str.length(); hi++) {
+            char c = str.charAt(hi);
             if (charIndexMap.containsKey(c)) {
-                windowStart = Math.max(windowStart, charIndexMap.get(c));
+                lo = Math.max(lo, charIndexMap.get(c) + 1);
             }
-            charIndexMap.put(c, i + 1);
-            max = Math.max(max, i - windowStart + 1);
+            charIndexMap.put(c, hi);
+            max = Math.max(max, hi - lo + 1);
         }
         return max;
+    }
+
+    static int noRepeatSubstring(String str) {
+        Set<Character> set = new HashSet<>();
+        int max = Integer.MIN_VALUE;
+        int start = 0;
+        int end = 0;
+        while (end < str.length()) {
+            if (!set.contains(str.charAt(end))) {
+                set.add(str.charAt(end));
+                end++;
+            } else {
+                set.remove(str.charAt(start));
+                start++;
+            }
+            max = Math.max(max, set.size());
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        var result = NoRepeatSubstring.findLength("aaabbabccbb");
+        System.out.println("longest substring which has no repeating characters " + result);
+
+        System.out.println(
+                "longest substring which has no repeating characters "
+                        + noRepeatSubstring("aaabbabccbb"));
     }
 }

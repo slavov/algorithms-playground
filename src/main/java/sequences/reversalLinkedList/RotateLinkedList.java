@@ -3,15 +3,13 @@ package sequences.reversalLinkedList;
 import sequences.fastAndSlowPointer.ListNode;
 
 /**
- * Given the head of a Singly LinkedList and a number ‘k’, rotate the LinkedList to the right by ‘k’ nodes.
- * <p>
- * Input: 1->2->3->4->5->NULL, k = 2
- * Output: 4->5->1->2->3->NULL
- * Explanation:
- * rotate 1 steps to the right: 5->1->2->3->4->NULL
- * rotate 2 steps to the right: 4->5->1->2->3->NULL
- * <p>
- * LeetCode: <a href="https://leetcode.com/problems/rotate-list/">61. Rotate List</a>
+ * Given the head of a Singly LinkedList and a number ‘k’, rotate the LinkedList to the right by ‘k’
+ * nodes.
+ *
+ * <p>Input: 1->2->3->4->5->NULL, k = 2 Output: 4->5->1->2->3->NULL Explanation: rotate 1 steps to
+ * the right: 5->1->2->3->4->NULL rotate 2 steps to the right: 4->5->1->2->3->NULL
+ *
+ * <p>LeetCode: <a href="https://leetcode.com/problems/rotate-list/">61. Rotate List</a>
  */
 public class RotateLinkedList {
 
@@ -27,8 +25,8 @@ public class RotateLinkedList {
             listSize++;
         }
 
-        lastNode.next = head;   // connect the last node with the head to make it a circular list
-        k = k % listSize;       // no need to do rotations more than the length of the list
+        lastNode.next = head; // connect the last node with the head to make it a circular list
+        k = k % listSize; // no need to do rotations more than the length of the list
 
         int skipLength = listSize - k;
         var lastNodeOfRotatedList = head;
@@ -43,5 +41,4 @@ public class RotateLinkedList {
 
         return head;
     }
-
 }

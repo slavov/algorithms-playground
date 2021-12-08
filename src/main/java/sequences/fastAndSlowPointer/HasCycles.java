@@ -1,15 +1,12 @@
 package sequences.fastAndSlowPointer;
 
 /**
- * Given a linked list, determine if it has a cycle in it.
- * LeetCode: <a href="https://leetcode.com/problems/linked-list-cycle/">Linked list cycle</a>
+ * Given a linked list, determine if it has a cycle in it. LeetCode: <a
+ * href="https://leetcode.com/problems/linked-list-cycle/">Linked list cycle</a>
  */
 public class HasCycles<T> {
 
-    /**
-     * Time complexity O(n)
-     * Space complexity O(1)
-     */
+    /** Time complexity O(n) Space complexity O(1) */
     public boolean hasCycle(ListNode<T> head) {
         ListNode<T> slow = head;
         ListNode<T> fast = head;

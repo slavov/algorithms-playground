@@ -1,8 +1,8 @@
 package sequences.leedcode;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class LongestCommonPrefixTest {
 
@@ -10,7 +10,6 @@ class LongestCommonPrefixTest {
 
     @Test
     void success() {
-        assertEquals("fl", solution.longestCommonPrefix(new String[] {"flower","flow","flight"}));
+        assertEquals("fl", solution.longestCommonPrefix(new String[] {"flower", "flow", "flight"}));
     }
-
 }

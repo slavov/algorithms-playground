@@ -151,7 +151,6 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         return new SinglyListIterator();
     }
 
-
     private static class ListNode<T> {
 
         private T item;
@@ -161,7 +160,6 @@ public class SinglyLinkedList<E> implements Iterable<E> {
             this.item = value;
             this.next = next;
         }
-
     }
 
     private class SinglyListIterator implements Iterator<E> {

@@ -2,9 +2,7 @@ package sequences.leedcode;
 
 import java.util.Arrays;
 
-/**
- * https://leetcode.com/problems/product-of-array-except-self/
- */
+/** https://leetcode.com/problems/product-of-array-except-self/ */
 public class ProductOfArrayExceptSelf {
 
     public static int[] productExceptSelf(int[] nums) {

@@ -1,10 +1,10 @@
 package sequences.fastAndSlowPointer;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class MiddleOfLinkedListTest {
 
@@ -31,5 +31,4 @@ class MiddleOfLinkedListTest {
         head.next.next.next.next.next = new ListNode<>(6);
         assertThat(instance.middleNode(head), equalTo(head.next.next.next));
     }
-
 }

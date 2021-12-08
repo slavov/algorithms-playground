@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Given a string and a list of words,
- * find all the starting indices of substrings in the given string that are a concatenation of all the given words
- * exactly once without any overlapping of words. It is given that all words are of the same length.
+ * Given a string and a list of words, find all the starting indices of substrings in the given
+ * string that are a concatenation of all the given words exactly once without any overlapping of
+ * words. It is given that all words are of the same length.
  */
 class WordsConcatenation {
 
@@ -27,15 +27,16 @@ class WordsConcatenation {
                 // get the next word from the string
                 String word = str.substring(nextWordIndex, nextWordIndex + wordLength);
                 if (!wordFrequencyMap.containsKey(word)) // break if we don't need this word
-                    break;
+                break;
 
-                wordsSeen.put(word, wordsSeen.getOrDefault(word, 0) + 1); // add the word to the 'wordsSeen' map
+                wordsSeen.put(
+                        word,
+                        wordsSeen.getOrDefault(word, 0) + 1); // add the word to the 'wordsSeen' map
 
-                if (wordsSeen.get(word) > wordFrequencyMap.getOrDefault(word, 0))
-                    break;
+                if (wordsSeen.get(word) > wordFrequencyMap.getOrDefault(word, 0)) break;
 
                 if (j + 1 == wordsCount) // store index if we have found all the words
-                    resultIndices.add(i);
+                resultIndices.add(i);
             }
         }
 

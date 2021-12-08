@@ -11,7 +11,6 @@ public class ListNode<T> {
 
     @Override
     public String toString() {
-       return String.valueOf(val);
+        return String.valueOf(val);
     }
-
 }

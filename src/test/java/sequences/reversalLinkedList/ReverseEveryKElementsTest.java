@@ -1,8 +1,9 @@
 package sequences.reversalLinkedList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+
 import sequences.fastAndSlowPointer.ListNode;
 
 class ReverseEveryKElementsTest {
@@ -11,7 +12,7 @@ class ReverseEveryKElementsTest {
 
     @Test
     void success() {
-        //given
+        // given
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
@@ -21,14 +22,13 @@ class ReverseEveryKElementsTest {
         head.next.next.next.next.next.next = new ListNode(7);
         head.next.next.next.next.next.next.next = new ListNode(8);
 
-        //when
+        // when
         var result = solution.reverse(head, 2);
 
-        //then
+        // then
         assertEquals(2, result.val);
         assertEquals(1, result.next.val);
         assertEquals(3, result.next.next.val);
         assertEquals(4, result.next.next.next.val);
     }
-
 }

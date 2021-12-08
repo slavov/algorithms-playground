@@ -23,5 +23,4 @@ class FirstKMissingPositivesTest {
     void findBaseCase2() {
         assertThat(instance.findNumbers(new int[] {2, 3, 4}, 3), contains(1, 5, 6));
     }
-
 }

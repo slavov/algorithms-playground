@@ -5,9 +5,10 @@ import java.util.Map;
 
 /**
  * Given a string and a pattern, find out if the string contains any permutation of the pattern.
- * <p>
- * Time complexity: O(N+M) where ‘N’ and ‘M’ are the number of characters in the input string and the pattern
- * Space complexity: O(M) since in the worst case, the whole pattern can have distinct characters which will go into the HashMap
+ *
+ * <p>Time complexity: O(N+M) where ‘N’ and ‘M’ are the number of characters in the input string and
+ * the pattern Space complexity: O(M) since in the worst case, the whole pattern can have distinct
+ * characters which will go into the HashMap
  */
 class PermutationInString {
 

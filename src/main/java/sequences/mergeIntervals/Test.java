@@ -14,8 +14,12 @@ public class Test {
         map.put("i", 2);
         map.put("leetcode", 1);
 
-        Queue<String> pq = new PriorityQueue<>((w1, w2) ->
-            map.get(w1).equals(map.get(w2)) ? w1.compareTo(w2) : map.get(w2) - map.get(w1));
+        Queue<String> pq =
+                new PriorityQueue<>(
+                        (w1, w2) ->
+                                map.get(w1).equals(map.get(w2))
+                                        ? w1.compareTo(w2)
+                                        : map.get(w2) - map.get(w1));
 
         for (String word : map.keySet()) {
             pq.add(word);

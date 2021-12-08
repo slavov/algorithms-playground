@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * LeetCode: <a href="https://leetcode.com/problems/time-based-key-value-store/">981. Time Based Key-Value Store</a>
- *
+ * LeetCode: <a href="https://leetcode.com/problems/time-based-key-value-store/">981. Time Based
+ * Key-Value Store</a>
  */
 class TimeMap {
 
@@ -39,7 +39,6 @@ class TimeMap {
             }
         }
         return result;
-
     }
 }
 

@@ -161,7 +161,6 @@ public class DoublyLinkedList<E> implements Iterable<E> {
         return new DoublyListIterator();
     }
 
-
     private static class ListNode<T> {
 
         private T item;
@@ -173,7 +172,6 @@ public class DoublyLinkedList<E> implements Iterable<E> {
             this.next = next;
             this.prev = prev;
         }
-
     }
 
     private class DoublyListIterator implements Iterator<E> {
