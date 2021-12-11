@@ -8,9 +8,10 @@ import java.util.Set;
 /** Given a string, find the length of the longest substring which has no repeating characters. */
 class NoRepeatSubstring {
 
-    static int findLength(String str) {
+    public int findLength(String str) {
         Map<Character, Integer> charIndexMap = new HashMap<>();
-        int lo = 0, max = 0;
+        int lo = 0;
+        int max = 0;
 
         for (int hi = 0; hi < str.length(); hi++) {
             char c = str.charAt(hi);
@@ -23,30 +24,21 @@ class NoRepeatSubstring {
         return max;
     }
 
-    static int noRepeatSubstring(String str) {
+    public int noRepeatSubstring(String str) {
         Set<Character> set = new HashSet<>();
         int max = Integer.MIN_VALUE;
-        int start = 0;
-        int end = 0;
-        while (end < str.length()) {
-            if (!set.contains(str.charAt(end))) {
-                set.add(str.charAt(end));
-                end++;
+        int l = 0;
+        int r = 0;
+        while (r < str.length()) {
+            if (!set.contains(str.charAt(r))) {
+                set.add(str.charAt(r));
+                r++;
             } else {
-                set.remove(str.charAt(start));
-                start++;
+                set.remove(str.charAt(l));
+                l++;
             }
             max = Math.max(max, set.size());
         }
         return max;
-    }
-
-    public static void main(String[] args) {
-        var result = NoRepeatSubstring.findLength("aaabbabccbb");
-        System.out.println("longest substring which has no repeating characters " + result);
-
-        System.out.println(
-                "longest substring which has no repeating characters "
-                        + noRepeatSubstring("aaabbabccbb"));
     }
 }
