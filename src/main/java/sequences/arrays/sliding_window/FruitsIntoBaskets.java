@@ -8,9 +8,16 @@ import java.util.Map;
  * baskets and your goal is to put maximum number of fruits in each basket. The only restriction is
  * that each basket can have only one type of fruit.
  *
+ * <p>First solution is:
+ *
+ * <p>Time complexity: O(n) Space complexity: O(n). Extra space for the map
+ *
+ * <p>Second solution is:
+ *
  * <p>Time complexity: O(n) Space complexity: O(1)
  *
  * <p><a href="https://leetcode.com/problems/fruit-into-baskets/">LeetCode: Fruit into baskets</a>
+ *
  * <p><a href="https://www.youtube.com/watch?v=s_zu2dOkq80">Fruit into baskets by Nick White</a>
  */
 class FruitsIntoBaskets {
@@ -22,8 +29,7 @@ class FruitsIntoBaskets {
         for (int r = 0; r < arr.length; r++) {
             fruitFrequencyMap.put(arr[r], fruitFrequencyMap.getOrDefault(arr[r], 0) + 1);
             while (fruitFrequencyMap.size() > 2) { // bigger than 2 because we have 2 baskets
-                fruitFrequencyMap.put(
-                        arr[l], fruitFrequencyMap.get(arr[l]) - 1);
+                fruitFrequencyMap.put(arr[l], fruitFrequencyMap.get(arr[l]) - 1);
                 if (fruitFrequencyMap.get(arr[l]) == 0) {
                     fruitFrequencyMap.remove(arr[l]);
                 }
