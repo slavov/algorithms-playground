@@ -7,21 +7,21 @@ import java.util.NoSuchElementException;
 public class ArrayList<E> implements Iterable<E> {
     private static final int DEFAULT_CAPACITY = 10;
     private int size;
-    private Object[] data;
+    private E[] data;
 
     public ArrayList(final int initialCapacity) {
         if (initialCapacity < 0) {
             throw new IllegalArgumentException("Illegal Capacity: " + initialCapacity);
         }
         if (initialCapacity == 0) {
-            this.data = new Object[DEFAULT_CAPACITY];
+            this.data = (E[]) new Object[DEFAULT_CAPACITY];
         } else {
-            this.data = new Object[initialCapacity];
+            this.data = (E[]) new Object[initialCapacity];
         }
     }
 
     public ArrayList() {
-        this.data = new Object[DEFAULT_CAPACITY];
+        this.data = (E[]) new Object[DEFAULT_CAPACITY];
     }
 
     public boolean add(E element) {
@@ -65,7 +65,7 @@ public class ArrayList<E> implements Iterable<E> {
     }
 
     private void resize(int capacity) {
-        final Object[] copy = new Object[capacity];
+        var copy = (E[])new Object[capacity];
         for (int i = 0; i < this.size; i++) {
             copy[i] = this.data[i];
         }
